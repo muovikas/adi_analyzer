@@ -13,7 +13,7 @@ The ADI Log Analyzer is designed for radio enthusiasts who use digital modes (li
 - **Band Organization**: Automatic grouping of contacts by band (160m, 80m, 40m, 20m, 15m, 10m, 6m, 2m, 70cm, etc.)
 - **Performance Visualization**: Generate histograms comparing RX (receive) and TX (transmit) signal reports
 - **Configurable Analysis**: Adjust histogram bin sizes to suit different signal report types (SSB/CW reports vs. digital SNR values)
-- **User-Friendly GUI**: PyQt6-based interface for easy interaction
+- **User-Friendly GUI**: PySide6-based interface for easy interaction
 
 ## Requirements
 
@@ -28,7 +28,7 @@ The ADI Log Analyzer is designed for radio enthusiasts who use digital modes (li
 1. Clone or download this repository
 2. Install dependencies:
    ```bash
-   pip install PySide6 pandas numpy matplotlib
+   pip install -r requirements.txt
    ```
 
 ## Usage
