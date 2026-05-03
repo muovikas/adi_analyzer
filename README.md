@@ -53,10 +53,11 @@ The histogram displays both RX (blue) and TX (red) signal reports, allowing you 
 
 ## Project Structure
 
-- `main.py` - Main application entry point with GUI implementation
-- `wsjtx_log.adi` - Sample ADI log file
-- `main.spec` - PyInstaller build specification
-- `adi_analyser_specification.txt` - Detailed functional requirements document
+- `main.py` - Main application entry point with GUI implementation and ADIF parser
+- `README.md` - Project documentation
+- `LICENSE` - Project license
+- `sample_log.adi` - Sample ADIF log file with 100 dummy QSO entries for testing
+- `sample_plot.png` - Example output histogram screenshot
 
 ## Notes
 
