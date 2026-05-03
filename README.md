@@ -12,7 +12,7 @@ The ADI Log Analyzer is designed for radio enthusiasts who use digital modes (li
 - **Data Filtering**: Filter QSO data by date range and radio band
 - **Band Organization**: Automatic grouping of contacts by band (160m, 80m, 40m, 20m, 15m, 10m, 6m, 2m, 70cm, etc.)
 - **Performance Visualization**: Generate histograms comparing RX (receive) and TX (transmit) signal reports
-- **Configurable Analysis**: Adjust histogram bin sizes to suit different signal report types (SSB/CW reports vs. digital SNR values)
+- **Configurable Analysis**: Adjust histogram bin sizes for best visualization
 - **User-Friendly GUI**: PySide6-based interface for easy interaction
 
 ## Requirements
@@ -44,6 +44,12 @@ Then:
 3. Select a **Band** from the dropdown to filter results
 4. Adjust the **Bin Size** for histogram granularity (in dB)
 5. Click **"Update / Plot"** to generate the visualization
+
+### Example Output
+
+![Sample Plot](sample_plot.png)
+
+The histogram displays both RX (blue) and TX (red) signal reports, allowing you to compare how well your station hears others versus how well you are heard.
 
 ## Project Structure
 
