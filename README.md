@@ -1,4 +1,4 @@
-# ADI Log Analyzer
+# ADI Log Analyzer - A Station Performance Analyzer for Amateur Radio Operators
 
 A graphical user interface (GUI) application for amateur radio operators to analyze and visualize radio station performance across different bands. This tool parses Amateur Data Interchange Format (ADIF) log files and generates signal report histograms to assess both receive (RX) and transmit (TX) performance.
 

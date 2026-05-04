@@ -19,37 +19,39 @@ def parse_adif(filepath):
     with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
         content = f.read()
 
-    if '<eoh>' in content.lower():
-        content = re.split(r'<eoh>', content, flags=re.IGNORECASE)[1]
-
-    records = re.split(r'<eor>', content, flags=re.IGNORECASE)
-    qsos = []
+    # Split by <eoh> to get all data sections
+    sections = re.split(r'<eoh>', content, flags=re.IGNORECASE)
     
+    qsos = []
     tag_pattern = re.compile(r'<([a-zA-Z_0-9]+):(\d+)[^>]*>')
     
-    for record in records:
-        qso = {}
-        pos = 0
-        while pos < len(record):
-            match = tag_pattern.search(record, pos)
-            if not match:
-                break
-            tag_name = match.group(1).lower()
-            try:
-                length = int(match.group(2))
-            except ValueError:
-                length = 0
-            
-            start_data = match.end()
-            end_data = start_data + length
-            data = record[start_data:end_data]
-            
-            qso[tag_name] = data.strip()
-            pos = end_data
+    # Process all sections after the first <eoh> (skip header)
+    for section in sections[1:]:
+        records = re.split(r'<eor>', section, flags=re.IGNORECASE)
         
-        if qso:
-            qsos.append(qso)
+        for record in records:
+            qso = {}
+            pos = 0
+            while pos < len(record):
+                match = tag_pattern.search(record, pos)
+                if not match:
+                    break
+                tag_name = match.group(1).lower()
+                try:
+                    length = int(match.group(2))
+                except ValueError:
+                    length = 0
+                
+                start_data = match.end()
+                end_data = start_data + length
+                data = record[start_data:end_data]
+                
+                qso[tag_name] = data.strip()
+                pos = end_data
             
+            if qso:
+                qsos.append(qso)
+                
     return qsos
 
 class ADIAnalyzerApp(QMainWindow):
