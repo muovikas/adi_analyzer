@@ -4,7 +4,7 @@ A graphical user interface (GUI) application for amateur radio operators to anal
 
 ## Overview
 
-The ADI Log Analyzer is designed for radio enthusiasts who use digital modes (like WSJT-X) or traditional modes and want to understand their station's performance. It reads standard ADI log files, filters data by date and band, and creates comparative histograms of signal reports.
+The ADI Log Analyzer is designed for radio enthusiasts who use digital modes (like WSJT-X) or traditional modes and want to understand their station's performance. It reads standard ADI log files, filters data by date and band, and creates comparative histograms of signal reports. Use the results to prioritize station improvements. If the reporst I receive are systematically lower than what I hear - perhaps I really need that legal limit linear amplifier...
 
 ## Features
 
